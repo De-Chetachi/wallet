@@ -1,0 +1,4 @@
+docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=cheta123  -e MYSQL_DATABASE=test_wallet    -e MYSQL_USER=cheta   -e MYSQL_PASSWORD=cheta123  mysql
+
+write tests for transaction.findbyid
+account.findbyuser
