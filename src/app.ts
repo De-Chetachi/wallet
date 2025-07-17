@@ -29,6 +29,9 @@ app.use('/api/wallet/users', userRouter);
 app.use('/api/wallet/accounts', accountRouter);
 app.use('/api/wallet/transactions', transactionRouter);
 
+app.get('/', (req: Request, res: Response) => {
+    res.json('Welcome to the Wallet API');
+})
 // app.get('/*', () => {
 //     throw new NotFoundError('resource not found');
 // });
