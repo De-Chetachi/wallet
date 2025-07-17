@@ -5,9 +5,11 @@
     "buildCommand": "echo building!"
     },
   "deploy": {
+     "preDeployCommand": ["sudo apt install nodejs npm"],
     "startCommand": "npm run dev",
     "healthcheckPath": "/",
     "healthcheckTimeout": 100,
     "restartPolicyType": "never"
     }
 }
+
