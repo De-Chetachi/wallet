@@ -605,7 +605,6 @@ npm run test
 ```bash
 # Production environment variables
 NODE_ENV=production
-DATABASE_URL=postgresql://user:password@host:port/database
 JWT_SECRET=super_secure_production_secret
 DB_HOST=database_host
 DB_USER=database_user
