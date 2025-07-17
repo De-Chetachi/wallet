@@ -44,7 +44,7 @@ const config: { [key: string]: Knex.Config } = {
             user: process.env.DB_USER,
             database: process.env.DB_NAME,
             password: process.env.DB_PASSWORD,
-            port: 4136,
+            port: 3306,
         },
         migrations: {
             tableName: 'migrations',
