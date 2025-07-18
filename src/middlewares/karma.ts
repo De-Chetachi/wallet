@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import axios from 'axios';
 import { KarmaError } from '../errors/karma_error';
 
+const karmaApiKey = process.env.KARMA_API_KEY;
+
 const karma = async (
     req: Request,
     res: Response,
@@ -12,7 +14,11 @@ const karma = async (
         console.log('Skipping karma check in test environment');
         next();
     } else {
-        const karma = await axios.get(`https://adjutor.lendsqr.com/v2/verification/karma/${identity}`);
+        const karma = await axios.get(`https://adjutor.lendsqr.com/v2/verification/karma/${identity}`, {
+        headers: {
+            'Authorization': `Bearer ${karmaApiKey}` 
+        }
+});
         if (karma.status !== 200) {
             throw new KarmaError();
         }

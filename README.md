@@ -610,6 +610,7 @@ DB_HOST=database_host
 DB_USER=database_user
 DB_NAME=database_name
 DB_PASSWORD=user_password
+KARMA_API_KEY=adjuter_api_key
 ```
 
 ### Build and Deploy
