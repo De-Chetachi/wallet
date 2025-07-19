@@ -163,13 +163,15 @@ KARMA_API_URL=https://adjutor.lendsqr.com/v2/verification/karma
 
 ### Base URL
 ```
-http://localhost:3000/api/wallet
+https://chetachi-lendsqr-be-test.up.railway.app/api/wallet
+
+note always use https, to prevent redirection to https which might also lead to change of request method to get
 ```
 
 ### Authentication Endpoints
 #### Register User
 ```http
-POST /api/wallet/users
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/users
 Content-Type: application/json
 
 {
@@ -191,7 +193,7 @@ Response:
 
 #### Login User
 ```http
-POST /api/wallet/users/login
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/users/login
 Content-Type: application/json
 
 {
@@ -214,7 +216,7 @@ Response:
 
 #### Get User Account
 ```http
-GET /api/wallet/accounts
+GET https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/accounts
 Authorization: Bearer <token>
 
 Response:
@@ -232,7 +234,7 @@ Response:
 
 #### Create Account
 ```http
-POST /api/wallet/accounts
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/accounts
 Authorization: Bearer <token>
 
 Response:
@@ -252,7 +254,7 @@ Response:
 
 #### Get All Transactions
 ```http
-GET /api/wallet/transactions
+GET https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions
 Authorization: Bearer <token>
 
 Response:
@@ -273,7 +275,7 @@ Response:
 
 #### Get Transaction by ID
 ```http
-GET /api/wallet/transactions/:id
+GET https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/:id
 Authorization: Bearer <token>
 
 Response:
@@ -291,7 +293,7 @@ Response:
 
 #### Make Deposit
 ```http
-POST /api/wallet/transactions/deposit
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/deposit
 Authorization: Bearer <token>
 Content-Type: application/json
 
@@ -314,7 +316,7 @@ Response:
 
 #### Make Withdrawal
 ```http
-POST /api/wallet/transactions/withdraw
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/withdraw
 Authorization: Bearer <token>
 Content-Type: application/json
 
@@ -337,7 +339,7 @@ Response:
 
 #### Transfer Money
 ```http
-POST /api/wallet/transactions/transfer
+POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/transfer
 Authorization: Bearer <token>
 Content-Type: application/json
 
@@ -390,13 +392,13 @@ Processes all financial transactions:
 
 ## Routes
 
-### User Routes (`/api/wallet/users`)
+### User Routes (`https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/users`)
 
 
-### Account Routes (`/api/wallet/accounts`)
+### Account Routes (`https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/accounts`)
 
 
-### Transaction Routes(`/api/wallet/transactions`)
+### Transaction Routes(`https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions`)
 
 
 ## Middleware
@@ -484,7 +486,7 @@ export class ValidationError extends CustomError     // 400
 
 1. **Register a new user**
    ```bash
-   curl -X POST http://localhost:3000/api/wallet/users \
+   curl -X POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/users \
      -H "Content-Type: application/json" \
      -d '{
        "name": "John Doe",
@@ -495,7 +497,7 @@ export class ValidationError extends CustomError     // 400
 
 2. **Login user**
    ```bash
-   curl -X POST http://localhost:3000/api/wallet/users/login \
+   curl -X POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/users/login \
      -H "Content-Type: application/json" \
      -d '{
        "email": "john@example.com",
@@ -505,14 +507,14 @@ export class ValidationError extends CustomError     // 400
 
 3. **Create account**
    ```bash
-   curl -X POST http://localhost:3000/api/wallet/accounts \
+   curl -X POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/accounts \
      -H "Authorization: Bearer <your-token>" \
      -b "session=<session-cookie>"
    ```
 
 4. **Make deposit**
    ```bash
-   curl -X POST http://localhost:3000/api/wallet/transactions/deposit \
+   curl -X POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/deposit \
      -H "Authorization: Bearer <your-token>" \
      -H "Content-Type: application/json" \
      -b "session=<session-cookie>" \
@@ -521,7 +523,7 @@ export class ValidationError extends CustomError     // 400
 
 5. **Transfer money**
    ```bash
-   curl -X POST http://localhost:3000/api/wallet/transactions/transfer \
+   curl -X POST https://chetachi-lendsqr-be-test.up.railway.app/api/wallet/transactions/transfer \
      -H "Authorization: Bearer <your-token>" \
      -H "Content-Type: application/json" \
      -b "session=<session-cookie>" \

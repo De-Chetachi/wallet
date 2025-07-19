@@ -5,6 +5,10 @@ if (!process.env.JWT_SECRET) {
   throw new Error('JWT_SECRET must be defined');
 }
 
+if (!process.env.KARMA_API_KEY) {
+  throw new Error('KARMA_API_KEY must be defined');
+}
+
 const port = process.env.PORT || 3000;
 dbClient.migrate.latest()
 .then(()=> {
